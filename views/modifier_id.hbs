@@ -1,0 +1,49 @@
+<div class="container texte-center">
+
+    <h1>MODIFIER</h1>
+
+    <div class="marge1"></div>
+
+
+    <div class="container">
+
+        <h1>
+            <P>Nom : {{ dbArticleID.nom }}</P>
+            <p>Prenom : {{ dbArticleID.prenom }}</p>
+            <p>Numero : {{ dbArticleID.numero }}</p>
+        </h1>
+
+
+        <form action="/actionmodifier/{{ dbArticleID._id }}?_method=PUT" method="POST">
+            {{! -- enctype pour pouvoir transferer des fichiers --}}
+
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Valider</button>
+            <input type="text" class="form-control" placeholder="{{ dbArticleID.nom }}" aria-label="nom addon"
+                name="nom" required>
+            <input type="text" class="form-control" placeholder="{{ dbArticleID.prenom }}" aria-label="prenom addon"
+                name="prenom" required>
+            <input type="text" class="form-control" placeholder="{{ dbArticleID.numero }}" aria-label="num addon"
+                name="numero" required>
+
+        </form>
+
+
+
+    </div>
+
+    <div class="marge1"></div>
+
+    <div class="container">
+
+        <a class="btn btn-secondary" href="/" role="button">Retour</a>
+
+
+        {{!-- Formulaire DELETE Archive --}}
+        <form action="/supprimer/{{ dbArticleID._id }}/?_method=DELETE" method="post">
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+        {{!-- / Formulaire DELETE Archive --}}
+
+
+
+    </div>

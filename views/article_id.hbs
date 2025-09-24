@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="marge1"></div>
+
+    <div class="container">
+
+        <h1>
+            <P>Nom : {{ dbArticleID.nom }}</P>
+            <p>Prenom : {{ dbArticleID.prenom }}</p>
+            <p>Numero : {{ dbArticleID.numero }}</p>
+
+        </h1>
+
+    </div>
+
+    <div class="marge1"></div>
+
+    <div class="container">
+
+        <a class="btn btn-secondary" href="/" role="button">Retour</a>
+
+        <form action="/modifier/{{ dbArticleID._id }}" method="get">
+            <button type="submit" class="btn btn-primary">Modifier</button>
+        </form>
+
+
+        {{!-- Formulaire DELETE Archive --}}
+        <form action="/supprimer/{{ dbArticleID._id }}/?_method=DELETE" method="post">
+            <button type="submit" class="btn btn-danger">Supprimer</button>
+        </form>
+        {{!-- / Formulaire DELETE Archive --}}
+
+
+
+    </div>

@@ -1,0 +1,47 @@
+<div class="container text-center">
+    <h1> Annuaire</h1>
+</div>
+
+<div class="container">
+    <div class="input-group mb-3">
+
+        <form action="/postenom" method="post">
+
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Valider</button>
+            <input type="text" class="form-control" placeholder="Nom" aria-label="nom addon" name="nom" required>
+            <input type="text" class="form-control" placeholder="Prenom" aria-label="prenom addon" name="prenom"
+                required>
+            <input type="text" class="form-control" placeholder="Numero" aria-label="num addon" name="numero" required>
+
+        </form>
+
+    </div>
+</div>
+
+<div class="container-md border-primary">
+  
+  
+    <ul class="list-unstyled row">
+
+        {{#each cardeannuaire }}
+
+        <li class="my-3 col-xl-3 col-lg-4 col-md-6 text-center">
+
+            <a href="/article/{{ _id }}" class="no-underline">
+                <div class="card border-primary center-div" style="width: 15rem;">
+
+                    <div class="card-body ">
+                        <P>Nom : {{ nom }}</P>
+                        <p>Prenom : {{ prenom }}</p>
+                        <p>Numero : {{ numero }}</p>
+                    </div>
+                </div>
+            </a>
+        </li>
+        {{/each}}
+
+
+    </ul>
+  
+
+</div>
