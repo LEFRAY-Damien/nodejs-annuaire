@@ -1,5 +1,3 @@
-// Controller adminContact
-
 // Import du model Contact de la base de donnée
 const Nom = require("../../database/models/Nom"); // Model database
 const path = require('path') // utile uniquement pour path.resolve plus bas
@@ -10,8 +8,6 @@ module.exports = {
     // Post
     postNom: (req, res) => {
 
-
-console.log("cadreannuaire");
         Nom.create({
             ...req.body,
 
